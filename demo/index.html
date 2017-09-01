@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telphone=no, email=no" >
+
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link type="text/css" rel="stylesheet" href="css/swiper.min.css"/>
+    <link type="text/css" rel="stylesheet" href="css/reset.css"/>
+    <link type="text/css" rel="stylesheet" href="css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <header class="header">
+        <ul class="nav">
+            <li class="active">未使用</li>
+            <li>已使用</li>
+            <li>已过期</li>
+        </ul>
+    </header>
+    <div class="content">
+       <div class="swiper-container banner">
+           <div class="swiper-wrapper">
+               <div class="swiper-slide">1</div>
+               <div class="swiper-slide">2</div>
+               <div class="swiper-slide">3</div>
+           </div>
+       </div>
+    </div>
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+
+        var banner =  new Swiper(".banner");
+        function slideTo(index){
+            banner.slideTo(index)
+        }
+        $(".nav").on("click","li",function(){
+            var index =  $(this).index();
+            $(this).addClass("active").siblings().removeClass("active");
+            slideTo(index);
+        })
+    </script>
+</body>
+</html>
